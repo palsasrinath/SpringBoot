@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layout}">
+<head>
+<title>Success</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+<link href="../static/css/core.css" th:href="@{/css/core.css}"
+	rel="stylesheet" media="screen" />
+<script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js"
+	th:src="@{/webjars/jquery/2.2.1/jquery.min.js}"></script>
+</head>
+<body>
+<h1>Users</h1>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr>
+        <th>NAME</th>
+        <th>URL</th>
+        <th>ADDRESS</th>
+      </tr>
+      <tr th:each="userList, i: ${userList}">
+        <td th:text="${userList.name}">Name</td>
+        <td th:text="${userList.url}">Url</td>
+        <td th:text="${userList.address}">Address</td>
+      </tr>
+    </table>
+</body>
+</html>
